@@ -466,12 +466,58 @@ def loader(fnc):
         if value in ["N", "n"]:
             exit()
         elif value in ["S", "s", "Y", "y"]:
-            os.system("clear")
-            os.system("cls")
-            newVersion = requests.get(f"{urlD}", params=query_parameters)
-            open("unnamed.py", "wb").write(newVersion.content)
-            print(bcolors.OKGREEN +"[UPDATE] OK (Start script again)".center(columns))
-            exit()
+            print(bcolors.FAIL + pyfiglet.figlet_format("UP. Options", font='3d-ascii', justify="center").center(columns))
+        
+            print(bcolors.FAIL +f" [{bcolors.ENDC}1{bcolors.FAIL}].  Download (Not working)                       ".center(columns) +bcolors.ENDC)
+            print(bcolors.FAIL +f" [{bcolors.ENDC}2{bcolors.FAIL}].  Git clone                                    ".center(columns) +bcolors.ENDC)
+            print(bcolors.FAIL +f" [{bcolors.ENDC}Q{bcolors.FAIL}].  Quit                                         ".center(columns) +bcolors.ENDC)
+            print()
+            value = input("Select: ")
+
+            if value == "1":
+                
+                os.system("clear")
+                os.system("cls")
+                print(bcolors.FAIL + f"[{bcolors.ENDC}ERROR{bcolors.FAIL}] NOT WORKING".center(columns))
+                input("Press any key to continue \n")
+                loader(menu)
+
+            elif value == "2":
+                os.system("clear")
+                os.system("cls")
+                print(bcolors.FAIL + f"[{bcolors.ENDC}INFO{bcolors.FAIL}] Make sure you have git installed and a folder called 'UnnamedM' not exists.".center(columns) + bcolors.ENDC)
+                print()
+                input("Press any key to continue ")
+            
+                os.system("git clone https://github.com//HSp4m/UnnamedM")
+
+                if os.path.isdir("UnnamedM\\"):
+                    os.system("clear")
+                    os.system("cls")
+                    print(bcolors.OKGREEN + pyfiglet.figlet_format("OK", font='3d-ascii', justify="center"))
+
+                    if os.path.isfile("UnnamedM\\unnamed.py"):
+                        print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Opening in 5.".center(columns) + bcolors.ENDC)
+                        time.sleep(5)
+                        exec(open("UnnamedM\\unnamed.py").read())
+                        exit()
+                    else:
+                        os.system("clear")
+                        os.system("cls")
+                        print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
+                        input("A error ocurred (File not found)." + bcolors.ENDC)
+                        exit()
+                else:
+                    os.system("clear")
+                    os.system("cls")
+                    print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
+                    input("A error ocurred (Try to open file in powershell)." + bcolors.ENDC)
+                    exit()
+                
+            elif value in ['q', 'Q']:
+                os.system("clear")
+                os.system("cls")
+                exit()
             
         else:
             loader()
