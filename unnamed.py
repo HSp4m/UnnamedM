@@ -229,30 +229,40 @@ def vrchat():
         print()
         menu()
 
-def payloader():
+def bruteforce():
     os.system("cls")
-    if (p_enabled == False):
-        print(bcolors.FAIL +"                                           :                   ".center(columns))                  
-        print("        ,;                                t#,                  ".center(columns))                 
-        print("      f#i   j.           j.              ;##W.     j.          ".center(columns))         
-        print("    .E#t    EW,          EW,            :#L:WE     EW,         ".center(columns))        
-        print("   i#W,     E##j         E##j          .KG  ,#D    E##j        ".center(columns))       
-        print("  L#D.      E###D.       E###D.        EE    ;#f   E###D.      ".center(columns))    
-        print("i##WLLLLt   E#t t##f     E#t t##f     :#G     GK   E#t t##f    ".center(columns))   
-        print(" .E#L       E#t  :K#E:   E#t  :K#E:    ;#L   LW.   E#t  :K#E:  ".center(columns)) 
-        print("   f#E:     E#KDDDD###i  E#KDDDD###i    t#f f#:    E#KDDDD###i ".center(columns))
-        print("    ,WW;    E#f,t#Wi,,,  E#f,t#Wi,,,     f#D#;     E#f,t#Wi,,, ".center(columns))
-        print("     .D#;   E#t  ;#W:    E#t  ;#W:        G#t      E#t  ;#W:   ".center(columns))  
-        print("       tt   DWi   ,KK:   DWi   ,KK:        t       DWi   ,KK:  ".center(columns))
-        print()
-        print("------------------------------------------------------------------------------------".center(columns))
-        print()
-        print(f"{bcolors.FAIL} This option is disabled.".center(columns))
-        print()
-        input("Press ANY key to continue.")
-        print()
-        menu()
+    print(bcolors.FAIL +f"                                                             {bcolors.ENDC},                                                ".center(columns))
+    print(bcolors.FAIL +f"                                                             {bcolors.ENDC}Et           :                                   ".center(columns))
+    print(bcolors.FAIL +f"                        :                        ,;          {bcolors.ENDC}E#t         t#,                     .,         ,;".center(columns))
+    print(bcolors.FAIL +f".           j.          Ef                     f#i           {bcolors.ENDC}E##t       ;##W.   j.              ,Wt       f#i ".center(columns))
+    print(bcolors.FAIL +f"Ef.         EW,         E#t     GEEEEEEEL    .E#t            {bcolors.ENDC}E#W#t     :#L:WE   EW,            i#D.     .E#t  ".center(columns))
+    print(bcolors.FAIL +f"E#Wi        E##j        E#t     ,;;L#K;;.   i#W,             {bcolors.ENDC}E#tfL.   .KG  ,#D  E##j          f#f      i#W,   ".center(columns))
+    print(bcolors.FAIL +f"E#K#D:      E###D.      E#t        t#E     L#D.              {bcolors.ENDC}E#t      EE    ;#f E###D.      .D#i      L#D.    ".center(columns))
+    print(bcolors.FAIL +f"E#t,E#f.    E#jG#W;     E#t fi     t#E   :K#Wfff;         {bcolors.ENDC},ffW#Dffj. f#.     t#iE#jG#W;    :KW,     :K#Wfff;  ".center(columns))
+    print(bcolors.FAIL +f"E#WEE##Wt   E#t t##f    E#t L#j    t#E   i##WLLLLt         {bcolors.ENDC};LW#ELLLf.:#G     GK E#t t##f   t#f      i##WLLLLt ".center(columns))
+    print(bcolors.FAIL +f"E##Ei;;;;.  E#t  :K#E:  E#t L#L    t#E    .E#L               {bcolors.ENDC}E#t      ;#L   LW. E#t  :K#E:  ;#G      .E#L     ".center(columns))
+    print(bcolors.FAIL +f"E#DWWt      E#KDDDD###i E#tf#E:    t#E      f#E:             {bcolors.ENDC}E#t       t#f f#:  E#KDDDD###i  :KE.      f#E:   ".center(columns))
+    print(bcolors.FAIL +f"E#t f#K;    E#f,t#Wi,,, E###f      t#E       ,WW;            {bcolors.ENDC}E#t        f#D#;   E#f,t#Wi,,,   .DW:      ,WW;  ".center(columns))
+    print(bcolors.FAIL +f"E#Dfff##E,  E#t  ;#W:   E#K,       t#E        .D#;           {bcolors.ENDC}E#t         G#t    E#t  ;#W:       L#,      .D#; ".center(columns))
+    print(bcolors.FAIL +f"jLLLLLLLLL; DWi   ,KK:  EL          fE          tt           {bcolors.ENDC}E#t          t     DWi   ,KK:       jt        tt ".center(columns))
+    print(bcolors.FAIL +f"                        :            :                       {bcolors.ENDC};#t                                              ".center(columns))
+    print(bcolors.FAIL +f"                                                            {bcolors.ENDC}:;                                              ".center(columns) + bcolors.FAIL)
+    print()
+    print("------------------------------------------------------------------------------------".center(columns))
+    print()
+    print(f"[{bcolors.ENDC}1{bcolors.FAIL}]. WIFI bruteforce".center(columns))
+    print(f"[{bcolors.ENDC}Q{bcolors.FAIL}]. Quit".center(columns))
+    print()
 
+    value = input(bcolors.ENDC + "Select: ")
+
+    if value in ["Q", "q"]:
+        loader(menu)
+
+    elif value == "1":
+        os.system("cls")
+
+    
 def menu():
     os.system("cls")
     print(bcolors.FAIL +"                                                                                 ;           ".center(columns) +bcolors.ENDC)
@@ -276,7 +286,7 @@ def menu():
     print()
     print(bcolors.FAIL +f" [{bcolors.ENDC}1{bcolors.FAIL}].  Malwares                       ".center(columns) +bcolors.ENDC)
     print(bcolors.FAIL +f" [{bcolors.ENDC}2{bcolors.FAIL}].  Windows Firewall               ".center(columns) +bcolors.ENDC)
-    print(bcolors.FAIL +f" [{bcolors.ENDC}3{bcolors.FAIL}].  PayLoader                      ".center(columns) +bcolors.ENDC)
+    print(bcolors.FAIL +f" [{bcolors.ENDC}3{bcolors.FAIL}].  BruteForce                     ".center(columns) +bcolors.ENDC)
     print(bcolors.FAIL +f" [{bcolors.ENDC}4{bcolors.FAIL}].  VRChat [EAC Bypassed]          ".center(columns) +bcolors.ENDC)
     print(bcolors.FAIL +f" [{bcolors.ENDC}5{bcolors.FAIL}].  Commands                       ".center(columns) +bcolors.ENDC)
     print(bcolors.FAIL +f" [{bcolors.ENDC}9{bcolors.FAIL}].  About                          ".center(columns) +bcolors.ENDC)
@@ -296,7 +306,7 @@ def menu():
 
     elif value == "3":
         os.system('cls')
-        payloader()
+        bruteforce()
 
     elif value == "4":
         os.system('cls')
