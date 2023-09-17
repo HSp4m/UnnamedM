@@ -22,13 +22,13 @@ try:
         import pyfiglet
     except:
         import os
-        os.system("cls")
         os.system("clear")
+        os.system("cls")
         print(bcolors.FAIL + f"[{bcolors.ENDC}MODULES{bcolors.FAIL}] Missing modules")
         print()
         input(f"Try: '{bcolors.ENDC}pip install pyfiglet{bcolors.FAIL}' \n")
-        os.system("cls")
         os.system("clear")
+        os.system("cls")
         exit()
 except:
     import os
@@ -36,8 +36,8 @@ except:
         import pyfiglet
         columns = shutil.get_terminal_size().columns
         error = pyfiglet.figlet_format("ERROR", font='3d-ascii')
-        os.system("cls")
         os.system("clear")
+        os.system("cls")
         print(bcolors.FAIL + error)
         print(bcolors.FAIL + f"[{bcolors.ENDC}MODULES{bcolors.FAIL}] Missing modules".center(columns))
         print()
@@ -45,13 +45,13 @@ except:
         exit()
     except:
         import os
-        os.system("cls")
         os.system("clear")
+        os.system("cls")
         print(bcolors.FAIL + f"[{bcolors.ENDC}MODULES{bcolors.FAIL}] Missing modules")
         print()
         input(f"Try: '{bcolors.ENDC}pip install pyfiglet{bcolors.FAIL}' and '{bcolors.ENDC}pip install requests{bcolors.FAIL}' \n")
-        os.system("cls")
         os.system("clear")
+        os.system("cls")
         exit()
     
 
@@ -77,6 +77,7 @@ u_version = f"{page.read()}".replace("b","").replace("'","").replace("n","").rep
 p_enabled = False;
 
 def malwares():
+    os.system("clear")
     os.system("cls")
     print(bcolors.FAIL + pyfiglet.figlet_format("Malware", font='3d-ascii', width=110, justify="center"))
     print("------------------------------------------------------------------------------------".center(columns))
@@ -90,6 +91,7 @@ def malwares():
         loader(menu)
 
 def firewall():
+    os.system("clear")
     os.system("cls")
     print(bcolors.FAIL + pyfiglet.figlet_format("Firewall", font='3d-ascii', width=110,justify="center"))
     print("------------------------------------------------------------------------------------".center(columns))
@@ -105,10 +107,12 @@ def firewall():
         loader(menu)
 
     elif value == "1":
+        os.system("clear")
         os.system("cls")
 
         os.system("netsh advfirewall set allprofiles state on")
 
+        os.system("clear")
         os.system("cls")
 
         print(f"[{bcolors.OKGREEN}ON{bcolors.ENDC}] Firewall".center(columns))
@@ -117,10 +121,12 @@ def firewall():
         loader(menu)
 
     elif value == "2":
+        os.system("clear")
         os.system("cls")
 
         os.system("netsh advfirewall set allprofiles state off")
 
+        os.system("clear")
         os.system("cls")
 
         print(f"[{bcolors.FAIL}OFF{bcolors.ENDC}] Firewall".center(columns))
@@ -129,6 +135,8 @@ def firewall():
         loader(menu)
     
 def about():
+    os.system("clear")
+    os.system("cls")
     print(bcolors.FAIL + pyfiglet.figlet_format("HSP4M", font='3d-ascii', justify="center"))
     print("------------------------------------------------------------------------------------".center(columns))
     print()  
@@ -141,6 +149,7 @@ def about():
 
 
 def commands():
+    os.system("clear")
     os.system("cls")
     print(bcolors.FAIL + pyfiglet.figlet_format("Commands", font='3d-ascii', width=110, justify="center"))
     print("------------------------------------------------------------------------------------".center(columns))
@@ -155,11 +164,14 @@ def commands():
         loader(menu)
 
 def vrchat():
+    os.system("clear")
+    os.system("cls")
     print(bcolors.FAIL + pyfiglet.figlet_format("VRChat", font='3d-ascii', width=110, justify="center"))
 
 
     value = input("VRChat Folder: " + bcolors.ENDC)
     if os.path.isdir(value):
+        os.system("clear")
         os.system("cls")
         print(bcolors.ENDC +f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Starting Path Verification.".center(columns))
         print()
@@ -184,6 +196,7 @@ def vrchat():
             print()
             menu()
     else:
+        os.system("clear")
         os.system("cls")
         print(f"{bcolors.FAIL}[{bcolors.ENDC}{value}{bcolors.FAIL}] it's not a valid folder.".center(columns))
         print()
@@ -192,6 +205,7 @@ def vrchat():
         loader(menu)
 
 def bruteforce():
+    os.system("clear")
     os.system("cls")
     print(bcolors.FAIL + pyfiglet.figlet_format("Passwords. Cracker", font='3d-ascii', width=110, justify="center"))
     print("------------------------------------------------------------------------------------".center(columns))
@@ -210,6 +224,7 @@ def bruteforce():
         loader(menu)
 
     elif value in ["2", "02"]:
+        os.system("clear")
         os.system("cls")
         print(bcolors.FAIL + pyfiglet.figlet_format("Password. Hash", font='3d-ascii', width=110, justify="center"))
         print("------------------------------------------------------------------------------------".center(columns))
@@ -236,6 +251,7 @@ def bruteforce():
 
     
 def menu():
+    os.system("clear")
     os.system("cls")
     print(bcolors.FAIL + pyfiglet.figlet_format("Crow 61", font='3d-ascii', justify="center"))
     print(bcolors.FAIL +f" [{bcolors.ENDC}01{bcolors.FAIL}].  Malwares                       ".center(columns) +bcolors.ENDC)
@@ -252,32 +268,38 @@ def menu():
 
 
     if value in  ["1", "01"] :
-        os.system('cls')
+        os.system("clear")
+        os.system("cls")
         malwares()
 
     elif value in  ["2", "02"]:
         firewall()
 
     elif value in  ["3", "03"]:
-        os.system('cls')
+        os.system("clear")
+        os.system("cls")
         bruteforce()
 
     elif value in  ["4", "04"]:
-        os.system('cls')
+        os.system("clear")
+        os.system("cls")
         vrchat()
 
     elif value in  ["5", "05"]:
-        os.system('cls')
+        os.system("clear")
+        os.system("cls")
         commands()
 
     elif value == "99":
-        os.system('cls')
+        os.system("clear")
+        os.system("cls")
         
         about()
 
     elif value in  ["0", "00"]:
         exit()
     else:
+        os.system("clear")
         os.system("cls")
         print(f"[{bcolors.ENDC}{value}{bcolors.FAIL}] it's not a valid input.".center(columns))
         print()
@@ -289,6 +311,7 @@ page = urllib.request.urlopen(url)
 u_version = f"{page.read()}".replace("b","").replace("'","").replace("n","").replace("\\","")
 
 def loader(fnc):
+    os.system("clear")
     os.system("cls")
     page = urllib.request.urlopen(url)
     u_version = f"{page.read()}".replace("b","").replace("'","").replace("n","").replace("\\","")
@@ -318,8 +341,8 @@ def loader(fnc):
                     input("\nPress any key to continue \n")
                     exit()
             
-            os.system("cls")
             os.system("clear")
+            os.system("cls")
             print(bcolors.FAIL + pyfiglet.figlet_format("UP. Options", font='3d-ascii', justify="center").center(columns))
         
             print(bcolors.FAIL +f" [{bcolors.ENDC}1{bcolors.FAIL}].  Download (Not working)                       ".center(columns) +bcolors.ENDC)
@@ -330,15 +353,15 @@ def loader(fnc):
 
             if value == "1":
                 
-                os.system("cls")
                 os.system("clear")
+                os.system("cls")
                 print(bcolors.FAIL + f"[{bcolors.ENDC}ERROR{bcolors.FAIL}] NOT WORKING".center(columns))
                 input("Press any key to continue \n")
                 loader(menu)
 
             elif value == "2":
-                os.system("cls")
                 os.system("clear")
+                os.system("cls")
                 print(bcolors.FAIL + f"[{bcolors.ENDC}INFO{bcolors.FAIL}] Make sure you have git installed and a folder called 'UnnamedM' not exists.".center(columns) + bcolors.ENDC)
                 print()
                 input("Press any key to continue ")
@@ -346,8 +369,8 @@ def loader(fnc):
                 os.system("git clone https://github.com//HSp4m/UnnamedM")
 
                 if os.path.isdir("UnnamedM\\"):
-                    os.system("cls")
                     os.system("clear")
+                    os.system("cls")
                     print(bcolors.OKGREEN + pyfiglet.figlet_format("OK", font='3d-ascii', justify="center"))
 
                     if os.path.isfile("UnnamedM\\unnamed.py"):
@@ -355,28 +378,28 @@ def loader(fnc):
                         print()
                         exit()
                     else:
-                        os.system("cls")
                         os.system("clear")
+                        os.system("cls")
                         print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
                         input("A error ocurred (File not found)." + bcolors.ENDC)
                         exit()
                 else:
-                    os.system("cls")
                     os.system("clear")
+                    os.system("cls")
                     print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
                     input("A error ocurred (Try to open file in powershell)." + bcolors.ENDC)
                     exit()
                 
             elif value in ['q', 'Q']:
-                os.system("cls")
                 os.system("clear")
+                os.system("cls")
                 exit()
 
         else:
             loader()
     else:
-        os.system("cls")
         os.system("clear")
+        os.system("cls")
         
         print(bcolors.FAIL + pyfiglet.figlet_format("Updater", font='3d-ascii', justify="center").center(columns))
         print("Update Avaliable".center(columns))
@@ -390,8 +413,8 @@ def loader(fnc):
         if value in ["N", "n"]:
             if os.path.isdir("UnnamedM\\"):
                 if os.path.isfile("UnnamedM\\unnamed.py"):
-                    os.system("cls")
                     os.system("clear")
+                    os.system("cls")
                     print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] A possible updated file exist in 'UnnamedM\\unnamed.py'".center(columns))
                     print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Delete folder if you want update again.".center(columns))
                     input("\nPress any key to continue \n")
@@ -401,15 +424,15 @@ def loader(fnc):
         elif value in ["S", "s", "Y", "y"]:
             if os.path.isdir("UnnamedM\\"):
                 if os.path.isfile("UnnamedM\\unnamed.py"):
-                    os.system("cls")
                     os.system("clear")
+                    os.system("cls")
                     print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] A possible updated file exist in 'UnnamedM\\unnamed.py'".center(columns))
                     print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Delete folder if you want update again.".center(columns))
                     input("\nPress any key to continue \n")
                     exit()
             
-            os.system("cls")
             os.system("clear")
+            os.system("cls")
             print(bcolors.FAIL + pyfiglet.figlet_format("UP. Options", font='3d-ascii', justify="center").center(columns))
         
             print(bcolors.FAIL +f" [{bcolors.ENDC}1{bcolors.FAIL}].  Download (Not working)                       ".center(columns) +bcolors.ENDC)
@@ -420,15 +443,15 @@ def loader(fnc):
 
             if value == "1":
                 
-                os.system("cls")
                 os.system("clear")
+                os.system("cls")
                 print(bcolors.FAIL + f"[{bcolors.ENDC}ERROR{bcolors.FAIL}] NOT WORKING".center(columns))
                 input("Press any key to continue \n")
                 loader(menu)
 
             elif value == "2":
-                os.system("cls")
                 os.system("clear")
+                os.system("cls")
                 print(bcolors.FAIL + f"[{bcolors.ENDC}INFO{bcolors.FAIL}] Make sure you have git installed and a folder called 'UnnamedM' not exists.".center(columns) + bcolors.ENDC)
                 print()
                 input("Press any key to continue ")
@@ -436,8 +459,8 @@ def loader(fnc):
                 os.system("git clone https://github.com//HSp4m/UnnamedM")
 
                 if os.path.isdir("UnnamedM\\"):
-                    os.system("cls")
                     os.system("clear")
+                    os.system("cls")
                     print(bcolors.OKGREEN + pyfiglet.figlet_format("OK", font='3d-ascii', justify="center"))
 
                     if os.path.isfile("UnnamedM\\unnamed.py"):
@@ -445,21 +468,21 @@ def loader(fnc):
                         print()
                         exit()
                     else:
-                        os.system("cls")
                         os.system("clear")
+                        os.system("cls")
                         print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
                         input("A error ocurred (File not found)." + bcolors.ENDC)
                         exit()
                 else:
-                    os.system("cls")
                     os.system("clear")
+                    os.system("cls")
                     print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
                     input("A error ocurred (Try to open file in powershell)." + bcolors.ENDC)
                     exit()
                 
             elif value in ['q', 'Q']:
-                os.system("cls")
                 os.system("clear")
+                os.system("cls")
                 exit()
             
         else:
