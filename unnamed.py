@@ -141,7 +141,6 @@ def about():
 
 
 def commands():
-    
     os.system("cls")
     print(bcolors.FAIL + pyfiglet.figlet_format("Commands", font='3d-ascii', width=110, justify="center"))
     print("------------------------------------------------------------------------------------".center(columns))
