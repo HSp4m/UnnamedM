@@ -72,7 +72,7 @@ url = 'https://raw.githubusercontent.com/HSp4m/UnnamedM/main/version.txt'
 urlD = "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/HSp4m/UnnamedM/blob/main/unnamed.py"
 query_parameters = {"downloadformat": "py"}
 page = urllib.request.urlopen(url)
-c_version = "0.0.1"
+c_version = "0.0.2"
 u_version = f"{page.read()}".replace("b","").replace("'","").replace("n","").replace("\\","")
 p_enabled = False;
 
@@ -313,25 +313,7 @@ def bruteforce():
     
 def menu():
     os.system("cls")
-    print(bcolors.FAIL +"                                                                                 ;           ".center(columns) +bcolors.ENDC)
-    print(bcolors.FAIL +"                                                                                 ED.         ".center(columns) +bcolors.ENDC)
-    print(bcolors.FAIL +":      L.             L.                                                        ,E#Wi        ".center(columns) +bcolors.ENDC)
-    print(bcolors.FAIL +"Ef     EW:        ,ft EW:        ,ft                                          f#iE###G.      ".center(columns) +bcolors.ENDC)
-    print(bcolors.FAIL +"E#t    E##;       t#E E##;       t#E            ..           ..       :     .E#t E#fD#W;     ".center(columns) +bcolors.ENDC)
-    print(bcolors.FAIL +"E#t    E###t      t#E E###t      t#E           ;W,          ,W,     .Et    i#W,  E#t t##L    ".center(columns) +bcolors.ENDC) 
-    print(bcolors.FAIL +"E#t    E#fE#f     t#E E#fE#f     t#E          j##,         t##,    ,W#t   L#D.   E#t  .E#K,  ".center(columns) +bcolors.ENDC) 
-    print(bcolors.FAIL +"E#t fi E#t D#G    t#E E#t D#G    t#E         G###,        L###,   j###t :K#Wfff; E#t    j##f ".center(columns) +bcolors.ENDC) 
-    print(bcolors.FAIL +"E#t L#jE#t  f#E.  t#E E#t  f#E.  t#E       :E####,      .E#j##,  G#fE#t i##WLLLLtE#t    :E#K:".center(columns) +bcolors.ENDC)
-    print(bcolors.FAIL +"E#t L#LE#t   t#K: t#E E#t   t#K: t#E      ;W#DG##,     ;WW; ##,:K#i E#t  .E#L    E#t   t##L  ".center(columns) +bcolors.ENDC)  
-    print(bcolors.FAIL +"E#tf#E:E#t    ;#W,t#E E#t    ;#W,t#E     j###DW##,    j#E.  ##f#W,  E#t    f#E:  E#t .D#W;   ".center(columns) +bcolors.ENDC)    
-    print(bcolors.FAIL +"E###f  E#t     :K#D#E E#t     :K#D#E    G##i,,G##,  .D#L    ###K:   E#t     ,WW; E#tiW#G.    ".center(columns) +bcolors.ENDC)    
-    print(bcolors.FAIL +"E#K,   E#t      .E##E E#t      .E##E  :K#K:   L##, :K#t     ##D.    E#t      .D#;E#K##i      ".center(columns) +bcolors.ENDC)      
-    print(bcolors.FAIL +"EL     ..         G#E ..         G#E ;##D.    L##, ...      #G      ..         ttE##D.       ".center(columns) +bcolors.ENDC)       
-    print(bcolors.FAIL +":                  fE             fE ,,,      .,,           j                    E#t         ".center(columns) +bcolors.ENDC)        
-    print(bcolors.FAIL +"                    ,              ,                                             L:          ".center(columns) +bcolors.ENDC)
-    print()
-    print()
-    print()
+    print(bcolors.FAIL + pyfiglet.figlet_format("Crow 61", font='3d-ascii', justify="center"))
     print(bcolors.FAIL +f" [{bcolors.ENDC}1{bcolors.FAIL}].  Malwares                       ".center(columns) +bcolors.ENDC)
     print(bcolors.FAIL +f" [{bcolors.ENDC}2{bcolors.FAIL}].  Windows Firewall               ".center(columns) +bcolors.ENDC)
     print(bcolors.FAIL +f" [{bcolors.ENDC}3{bcolors.FAIL}].  BruteForce                     ".center(columns) +bcolors.ENDC)
@@ -397,28 +379,10 @@ def menu():
 def loader(fnc):
     os.system("cls")
     if (u_version == c_version):
-        
         fnc()
+
     elif (u_version < c_version):
-        print(bcolors.FAIL +"                     ;                                                              ".center(columns))
-        print("                     ED.                                                            ".center(columns))
-        print(":                    E#Wi                                            ,;             ".center(columns))
-        print("Ef       t           E###G.                                        f#i   j.         ".center(columns))
-        print("E#t      ED.         E#fD#W;                  ..  GEEEEEEEL      .E#t    EW,        ".center(columns))
-        print("E#t      E#K:        E#t t##L                ;W,  ,;;L#K;;.     i#W,     E##j       ".center(columns))
-        print("E#t      E##W;       E#t  .E#K,             j##,     t#E       L#D.      E###D.     ".center(columns))
-        print("E#t fi   E#E##t      E#t    j##f           G###,     t#E     :K#Wfff;    E#jG#W;    ".center(columns))
-        print("E#t L#j  E#ti##f     E#t    :E#K:        :E####,     t#E     i##WLLLLt   E#t t##f   ".center(columns))
-        print("E#t L#L  E#t ;##D.   E#t   t##L         ;W#DG##,     t#E      .E#L       E#t  :K#E: ".center(columns))
-        print("E#tf#E:  E#ELLE##K:  E#t .D#W;         j###DW##,     t#E        f#E:     E#KDDDD###i".center(columns))
-        print("E###f    E#L;;;;;;,  E#tiW#G.         G##i,,G##,     t#E         ,WW;    E#f,t#Wi,,,".center(columns))
-        print("E#K,     E#t         E#K##i         :K#K:   L##,     t#E          .D#;   E#t  ;#W:  ".center(columns))
-        print("EL       E#t         E##D.         ;##D.    L##,      fE            tt   DWi   ,KK: ".center(columns))
-        print(":                    E#t           ,,,      .,,        :                            ".center(columns))
-        print("                     L:                                                             ".center(columns))
-        print()
-        print("------------------------------------------------------------------------------------".center(columns))
-        print()
+        print(bcolors.FAIL + pyfiglet.figlet_format("Updater", font='3d-ascii', justify="center").center(columns))
         print("Invalid version detected.".center(columns))
         print()
         print(f"Current version: [{bcolors.ENDC}{c_version}{bcolors.FAIL}]".center(columns))
@@ -430,34 +394,67 @@ def loader(fnc):
         if value in ["N", "n"]:
             fnc()
         elif value in ["S", "s", "Y", "y"]:
-            newVersion = requests.get(f"{urlD}", params=query_parameters)
-            open("unnamed.py", "wb").write(newVersion.content)
+
+            os.system("clear")
             os.system("cls")
-            print(bcolors.OKGREEN +"[UPDATE] OK (Start script again)".center(columns))
-            exit()
+            print(bcolors.FAIL + pyfiglet.figlet_format("UP. Options", font='3d-ascii', justify="center").center(columns))
+        
+            print(bcolors.FAIL +f" [{bcolors.ENDC}1{bcolors.FAIL}].  Download (Not working)                       ".center(columns) +bcolors.ENDC)
+            print(bcolors.FAIL +f" [{bcolors.ENDC}2{bcolors.FAIL}].  Git clone                                    ".center(columns) +bcolors.ENDC)
+            print(bcolors.FAIL +f" [{bcolors.ENDC}Q{bcolors.FAIL}].  Quit                                         ".center(columns) +bcolors.ENDC)
+            print()
+            value = input("Select: ")
+
+            if value == "1":
+                
+                os.system("clear")
+                os.system("cls")
+                print(bcolors.FAIL + f"[{bcolors.ENDC}ERROR{bcolors.FAIL}] NOT WORKING".center(columns))
+                input("Press any key to continue \n")
+                loader(menu)
+
+            elif value == "2":
+                os.system("clear")
+                os.system("cls")
+                print(bcolors.FAIL + f"[{bcolors.ENDC}INFO{bcolors.FAIL}] Make sure you have git installed and a folder called 'UnnamedM' not exists.".center(columns) + bcolors.ENDC)
+                print()
+                input("Press any key to continue ")
+            
+                os.system("git clone https://github.com//HSp4m/UnnamedM")
+
+                if os.path.isdir("UnnamedM\\"):
+                    os.system("clear")
+                    os.system("cls")
+                    print(bcolors.OKGREEN + pyfiglet.figlet_format("OK", font='3d-ascii', justify="center"))
+
+                    if os.path.isfile("UnnamedM\\unnamed.py"):
+                        print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Opening in 5.".center(columns) + bcolors.ENDC)
+                        time.sleep(5)
+                        exec(open("UnnamedM\\unnamed.py").read())
+                        exit()
+                    else:
+                        os.system("clear")
+                        os.system("cls")
+                        print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
+                        input("A error ocurred (File not found)." + bcolors.ENDC)
+                        exit()
+                else:
+                    os.system("clear")
+                    os.system("cls")
+                    print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
+                    input("A error ocurred (Try to open file in powershell)." + bcolors.ENDC)
+                    exit()
+                
+            elif value in ['q', 'Q']:
+                os.system("clear")
+                os.system("cls")
+                exit()
+
         else:
             loader()
     else:
         
-        print(bcolors.FAIL +"                     ;                                                              ".center(columns))
-        print("                     ED.                                                            ".center(columns))
-        print(":                    E#Wi                                            ,;             ".center(columns))
-        print("Ef       t           E###G.                                        f#i   j.         ".center(columns))
-        print("E#t      ED.         E#fD#W;                  ..  GEEEEEEEL      .E#t    EW,        ".center(columns))
-        print("E#t      E#K:        E#t t##L                ;W,  ,;;L#K;;.     i#W,     E##j       ".center(columns))
-        print("E#t      E##W;       E#t  .E#K,             j##,     t#E       L#D.      E###D.     ".center(columns))
-        print("E#t fi   E#E##t      E#t    j##f           G###,     t#E     :K#Wfff;    E#jG#W;    ".center(columns))
-        print("E#t L#j  E#ti##f     E#t    :E#K:        :E####,     t#E     i##WLLLLt   E#t t##f   ".center(columns))
-        print("E#t L#L  E#t ;##D.   E#t   t##L         ;W#DG##,     t#E      .E#L       E#t  :K#E: ".center(columns))
-        print("E#tf#E:  E#ELLE##K:  E#t .D#W;         j###DW##,     t#E        f#E:     E#KDDDD###i".center(columns))
-        print("E###f    E#L;;;;;;,  E#tiW#G.         G##i,,G##,     t#E         ,WW;    E#f,t#Wi,,,".center(columns))
-        print("E#K,     E#t         E#K##i         :K#K:   L##,     t#E          .D#;   E#t  ;#W:  ".center(columns))
-        print("EL       E#t         E##D.         ;##D.    L##,      fE            tt   DWi   ,KK: ".center(columns))
-        print(":                    E#t           ,,,      .,,        :                            ".center(columns))
-        print("                     L:                                                             ".center(columns))
-        print()
-        print("------------------------------------------------------------------------------------".center(columns))
-        print()
+        print(bcolors.FAIL + pyfiglet.figlet_format("Updater", font='3d-ascii', justify="center").center(columns))
         print("Update Avaliable".center(columns))
         print()
         print(f"Script version: [{bcolors.ENDC}{c_version}{bcolors.FAIL}]".center(columns))
@@ -469,6 +466,8 @@ def loader(fnc):
         if value in ["N", "n"]:
             exit()
         elif value in ["S", "s", "Y", "y"]:
+            os.system("clear")
+            os.system("cls")
             newVersion = requests.get(f"{urlD}", params=query_parameters)
             open("unnamed.py", "wb").write(newVersion.content)
             print(bcolors.OKGREEN +"[UPDATE] OK (Start script again)".center(columns))
