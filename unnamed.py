@@ -1,11 +1,31 @@
-import requests
-import shutil
-import os
-import time
-import subprocess
-import urllib.request
-import re
-import pyfiglet
+class bcolors:
+        HEADER = '\033[95m'
+        OKBLUE = '\033[94m'
+        OKCYAN = '\033[96m'
+        OKGREEN = '\033[92m'
+        WARNING = '\033[93m'
+        FAIL = '\033[31m'
+        ENDC = '\033[0m'
+        BOLD = '\033[1m'
+        UNDERLINE = '\033[4m'
+    
+try:
+    
+    import requests
+    import shutil
+    import os
+    import time
+    import subprocess
+    import urllib.request
+    import re
+except:
+    import os
+    os.system("clear")
+    os.system("cls")
+
+    print(bcolors.FAIL + f"[{bcolors.ENDC}MODULES{bcolors.FAIL}] Missing modules")
+    print()
+    input("Try: 'pip install requests'")
 
 columns = shutil.get_terminal_size().columns
 
@@ -24,7 +44,7 @@ url = 'https://raw.githubusercontent.com/HSp4m/UnnamedM/main/version.txt'
 urlD = "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/HSp4m/UnnamedM/blob/main/unnamed.py"
 query_parameters = {"downloadformat": "py"}
 page = urllib.request.urlopen(url)
-c_version = "0.0.2"
+c_version = "0.0.1"
 u_version = f"{page.read()}".replace("b","").replace("'","").replace("n","").replace("\\","")
 p_enabled = False;
 
