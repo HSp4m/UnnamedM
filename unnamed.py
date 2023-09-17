@@ -8,25 +8,52 @@ class bcolors:
         ENDC = '\033[0m'
         BOLD = '\033[1m'
         UNDERLINE = '\033[4m'
-    
+import shutil
+import os
+import time
+import subprocess
+import urllib.request
+import re
+
 try:
     
     import requests
-    import shutil
-    import os
-    import time
-    import subprocess
-    import urllib.request
-    import re
+    try:
+        import pyfiglet
+    except:
+        import os
+        os.system("clear")
+        os.system("cls")
+        print(bcolors.FAIL + f"[{bcolors.ENDC}MODULES{bcolors.FAIL}] Missing modules")
+        print()
+        input(f"Try: '{bcolors.ENDC}pip install pyfiglet{bcolors.FAIL}' \n")
+        os.system("clear")
+        os.system("cls")
+        exit()
 except:
     import os
-    os.system("clear")
-    os.system("cls")
-
-    print(bcolors.FAIL + f"[{bcolors.ENDC}MODULES{bcolors.FAIL}] Missing modules")
-    print()
-    input("Try: 'pip install requests'")
-    exit()
+    try:
+        import pyfiglet
+        columns = shutil.get_terminal_size().columns
+        error = pyfiglet.figlet_format("ERROR", font='3d-ascii')
+        os.system("clear")
+        os.system("cls")
+        print(bcolors.FAIL + error)
+        print(bcolors.FAIL + f"[{bcolors.ENDC}MODULES{bcolors.FAIL}] Missing modules".center(columns))
+        print()
+        input(f"Try: '{bcolors.ENDC}pip install requests{bcolors.FAIL}' \n")
+        exit()
+    except:
+        import os
+        os.system("clear")
+        os.system("cls")
+        print(bcolors.FAIL + f"[{bcolors.ENDC}MODULES{bcolors.FAIL}] Missing modules")
+        print()
+        input(f"Try: '{bcolors.ENDC}pip install pyfiglet{bcolors.FAIL}' and '{bcolors.ENDC}pip install requests{bcolors.FAIL}' \n")
+        os.system("clear")
+        os.system("cls")
+        exit()
+    
 
 columns = shutil.get_terminal_size().columns
 
