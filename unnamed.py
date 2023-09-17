@@ -26,6 +26,7 @@ except:
     print(bcolors.FAIL + f"[{bcolors.ENDC}MODULES{bcolors.FAIL}] Missing modules")
     print()
     input("Try: 'pip install requests'")
+    exit()
 
 columns = shutil.get_terminal_size().columns
 
