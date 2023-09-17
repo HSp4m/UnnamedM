@@ -284,7 +284,15 @@ def loader(fnc):
         if value in ["N", "n"]:
             fnc()
         elif value in ["S", "s", "Y", "y"]:
-
+            if os.path.isdir("UnnamedM\\"):
+                if os.path.isfile("UnnamedM\\unnamed.py"):
+                    os.system("clear")
+                    os.system("cls")
+                    print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] A possible updated file exist in 'UnnamedM\\unnamed.py'.".center(columns))
+                    print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Delete folder if you want update again.".center(columns))
+                    input("\nPress any key to continue \n")
+                    exit()
+            
             os.system("clear")
             os.system("cls")
             print(bcolors.FAIL + pyfiglet.figlet_format("UP. Options", font='3d-ascii', justify="center").center(columns))
@@ -344,6 +352,7 @@ def loader(fnc):
     else:
         os.system("clear")
         os.system("cls")
+        
         print(bcolors.FAIL + pyfiglet.figlet_format("Updater", font='3d-ascii', justify="center").center(columns))
         print("Update Avaliable".center(columns))
         print()
@@ -354,8 +363,26 @@ def loader(fnc):
         value = input(f"{bcolors.ENDC}Update? [{bcolors.OKGREEN}Y{bcolors.ENDC}/{bcolors.FAIL}N{bcolors.ENDC}]: ")
 
         if value in ["N", "n"]:
-            exit()
+            if os.path.isdir("UnnamedM\\"):
+                if os.path.isfile("UnnamedM\\unnamed.py"):
+                    os.system("clear")
+                    os.system("cls")
+                    print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] A possible updated file exist in 'UnnamedM\\unnamed.py'".center(columns))
+                    print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Delete folder if you want update again.".center(columns))
+                    input("\nPress any key to continue \n")
+                    exit()
+            else:
+                exit()
         elif value in ["S", "s", "Y", "y"]:
+            if os.path.isdir("UnnamedM\\"):
+                if os.path.isfile("UnnamedM\\unnamed.py"):
+                    os.system("clear")
+                    os.system("cls")
+                    print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] A possible updated file exist in 'UnnamedM\\unnamed.py'".center(columns))
+                    print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Delete folder if you want update again.".center(columns))
+                    input("\nPress any key to continue \n")
+                    exit()
+            
             os.system("clear")
             os.system("cls")
             print(bcolors.FAIL + pyfiglet.figlet_format("UP. Options", font='3d-ascii', justify="center").center(columns))
