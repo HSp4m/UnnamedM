@@ -20,11 +20,11 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-url = 'https://raw.githubusercontent.com/HSp4m/virustotalApi-integration/main/version'
-urlD = "https://filetransfer.io/data-package/v8LSPHTP/download"
+url = 'https://raw.githubusercontent.com/HSp4m/UnnamedM/main/version.txt'
+urlD = "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/HSp4m/UnnamedM/blob/main/unnamed.py"
 query_parameters = {"downloadformat": "py"}
 page = urllib.request.urlopen(url)
-c_version = "0.1.9"
+c_version = "0.0.1"
 u_version = f"{page.read()}".replace("b","").replace("'","").replace("n","").replace("\\","")
 p_enabled = False;
 
