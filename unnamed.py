@@ -434,9 +434,8 @@ def loader(fnc):
                     print(bcolors.OKGREEN + pyfiglet.figlet_format("OK", font='3d-ascii', justify="center"))
 
                     if os.path.isfile("UnnamedM\\unnamed.py"):
-                        print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Opening in 5.".center(columns) + bcolors.ENDC)
-                        time.sleep(5)
-                        exec(open("UnnamedM\\unnamed.py").read())
+                        print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Open 'UnnamedM\\unnamed.py' to start new version".center(columns) + bcolors.ENDC)
+                        print()
                         exit()
                     else:
                         os.system("clear")
@@ -459,6 +458,8 @@ def loader(fnc):
         else:
             loader()
     else:
+        os.system("clear")
+        os.system("cls")
         print(bcolors.FAIL + pyfiglet.figlet_format("Updater", font='3d-ascii', justify="center").center(columns))
         print("Update Avaliable".center(columns))
         print()
@@ -471,6 +472,8 @@ def loader(fnc):
         if value in ["N", "n"]:
             exit()
         elif value in ["S", "s", "Y", "y"]:
+            os.system("clear")
+            os.system("cls")
             print(bcolors.FAIL + pyfiglet.figlet_format("UP. Options", font='3d-ascii', justify="center").center(columns))
         
             print(bcolors.FAIL +f" [{bcolors.ENDC}1{bcolors.FAIL}].  Download (Not working)                       ".center(columns) +bcolors.ENDC)
@@ -502,9 +505,8 @@ def loader(fnc):
                     print(bcolors.OKGREEN + pyfiglet.figlet_format("OK", font='3d-ascii', justify="center"))
 
                     if os.path.isfile("UnnamedM\\unnamed.py"):
-                        print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Opening in 5.".center(columns) + bcolors.ENDC)
-                        time.sleep(5)
-                        exec(open("UnnamedM\\unnamed.py").read())
+                        print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Open 'UnnamedM\\unnamed.py' to start new version".center(columns) + bcolors.ENDC)
+                        print()
                         exit()
                     else:
                         os.system("clear")
