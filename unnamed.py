@@ -72,7 +72,7 @@ url = 'https://raw.githubusercontent.com/HSp4m/UnnamedM/main/version.txt'
 urlD = "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/HSp4m/UnnamedM/blob/main/unnamed.py"
 query_parameters = {"downloadformat": "py"}
 page = urllib.request.urlopen(url)
-c_version = "0.0.2"
+c_version = "0.0.3"
 u_version = f"{page.read()}".replace("b","").replace("'","").replace("n","").replace("\\","")
 p_enabled = False;
 
@@ -376,12 +376,18 @@ def menu():
         print()
         menu()
 
+page = urllib.request.urlopen(url)
+u_version = f"{page.read()}".replace("b","").replace("'","").replace("n","").replace("\\","")
+
 def loader(fnc):
     os.system("cls")
+    page = urllib.request.urlopen(url)
+    u_version = f"{page.read()}".replace("b","").replace("'","").replace("n","").replace("\\","")
     if (u_version == c_version):
         fnc()
 
     elif (u_version < c_version):
+        
         print(bcolors.FAIL + pyfiglet.figlet_format("Updater", font='3d-ascii', justify="center").center(columns))
         print("Invalid version detected.".center(columns))
         print()
@@ -453,7 +459,6 @@ def loader(fnc):
         else:
             loader()
     else:
-        
         print(bcolors.FAIL + pyfiglet.figlet_format("Updater", font='3d-ascii', justify="center").center(columns))
         print("Update Avaliable".center(columns))
         print()
