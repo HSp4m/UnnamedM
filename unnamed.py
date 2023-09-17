@@ -134,7 +134,7 @@ def about():
     print()  
     print("https://github.com/HSp4m".center(columns))
     print()
-    print(f"Version: BETA {c_version}".center(columns))
+    print(f"Version: [{bcolors.ENDC}BETA {c_version}{bcolors.FAIL}]".center(columns))
     
     input("\n:")
     loader(menu)
