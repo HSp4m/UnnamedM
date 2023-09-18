@@ -14,6 +14,10 @@ import time
 import subprocess
 import urllib.request
 import re
+import hashlib
+import zipfile
+import random
+import string
 
 try:
     
@@ -49,7 +53,7 @@ except:
         os.system("cls")
         print(bcolors.FAIL + f"[{bcolors.ENDC}MODULES{bcolors.FAIL}] Missing modules")
         print()
-        input(f"Try: '{bcolors.ENDC}pip install pyfiglet{bcolors.FAIL}' and '{bcolors.ENDC}pip install requests{bcolors.FAIL}' \n")
+        input(f"Try: '{bcolors.ENDC}pip install pyfiglet{bcolors.FAIL}' and '{bcolors.ENDC}pip install requests{bcolors.FAIL}' or install now \n")
         os.system("clear")
         os.system("cls")
         exit()
@@ -67,14 +71,93 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-
+atem = 0
+guess = ''
 url = 'https://raw.githubusercontent.com/HSp4m/UnnamedM/main/version.txt'
-urlD = "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/HSp4m/UnnamedM/blob/main/unnamed.py"
+#urlD = "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/HSp4m/UnnamedM/blob/main/unnamed.py"
 query_parameters = {"downloadformat": "py"}
 page = urllib.request.urlopen(url)
-c_version = "0.0.7"
+c_version = "0.0.8"
 u_version = f"{page.read()}".replace("b","").replace("'","").replace("n","").replace("\\","")
 p_enabled = False;
+
+def crack(zip_file, path, val):
+
+    os.system("clear")
+    os.system("cls")
+
+    print(bcolors.FAIL + pyfiglet.figlet_format("Craking...", font='3d-ascii', width=110, justify="center"))
+    print("------------------------------------------------------------------------------------".center(columns))
+
+    atem = 0
+    while True:
+        if val == "0":
+            input("a")
+            guess = ''.join(random.choices(string.ascii_letters + string.digits, k=int(string.digits))).encode('utf-8')
+        else:
+            guess = ''.join(random.choices(string.ascii_letters + string.digits, k=int(val))).encode('utf-8')
+            
+        atem += 1
+        try:
+
+            zip_file.extractall(path,pwd=guess)
+
+            os.system("clear")
+            os.system("cls")
+
+            print(bcolors.OKGREEN + pyfiglet.figlet_format("Craked !", font='3d-ascii', width=110, justify="center"))
+            print("------------------------------------------------------------------------------------".center(columns))
+            print()
+            print(f"Password: {guess} attempts: {atem}".center(columns))
+            print()
+            break
+
+        except:
+            continue
+
+def crackP(zip_file, path, pathP):
+
+    os.system("clear")
+    os.system("cls")
+    total = len(list(open(pathP)))
+    atem = 0
+    crack = 0
+    print(bcolors.FAIL + pyfiglet.figlet_format("Craking...", font='3d-ascii', width=110, justify="center"))
+    print("------------------------------------------------------------------------------------".center(columns))
+    print()
+    print(f"[{bcolors.ENDC}INFO{bcolors.FAIL}] Trying '{total}' passwords.".center(columns))
+
+    with open(pathP, "rb") as file:
+        for line in file:
+            for guees in line.split():
+                try:
+                    atem +=1
+                    zip_file.extractall(path,pwd=guees)
+                    crack = 1
+                    os.system("clear")
+                    os.system("cls")
+                    print(bcolors.OKGREEN + pyfiglet.figlet_format("Craked !", font='3d-ascii', width=110, justify="center"))
+                    print("------------------------------------------------------------------------------------".center(columns))
+                    print()
+                    print(f"Password: {guees.decode()} Line: {atem}".center(columns))
+                    print()
+                    break
+
+                except:
+                    continue
+    if atem == total:
+        if crack == 0:
+            os.system("clear")
+            os.system("cls")
+            print(bcolors.FAIL + pyfiglet.figlet_format("Not Found !", font='3d-ascii', width=110, justify="center"))
+            print("------------------------------------------------------------------------------------".center(columns))
+            print()
+            print(f"Password not found in Password List.".center(columns))
+            input("\n: ")
+            loader(menu)
+
+
+
 
 def malwares():
     os.system("clear")
@@ -82,12 +165,14 @@ def malwares():
     print(bcolors.FAIL + pyfiglet.figlet_format("Malware", font='3d-ascii', width=110, justify="center"))
     print("------------------------------------------------------------------------------------".center(columns))
     print()
-    print(f"[{bcolors.ENDC}1{bcolors.FAIL}]. List Malwares".center(columns))
-    print(f"[{bcolors.ENDC}Q{bcolors.FAIL}]. Quit".center(columns))
+    print(f"[{bcolors.ENDC}01{bcolors.FAIL}]. List Malwares".center(columns))
+    print(f"[{bcolors.ENDC}00{bcolors.FAIL}]. Quit".center(columns))
     print()
     value = input(bcolors.ENDC +"Select: ")
 
-    if value in ["Q", "q"]:
+    if value in ["0", "00"]:
+        loader(menu)
+    if value in ["1", "01"]:
         loader(menu)
 
 def firewall():
@@ -96,17 +181,17 @@ def firewall():
     print(bcolors.FAIL + pyfiglet.figlet_format("Firewall", font='3d-ascii', width=110,justify="center"))
     print("------------------------------------------------------------------------------------".center(columns))
     print()
-    print(f"[{bcolors.ENDC}1{bcolors.FAIL}] Enable ".center(columns))
-    print(f"[{bcolors.ENDC}2{bcolors.FAIL}] Disable ".center(columns))
-    print(f"[{bcolors.ENDC}Q{bcolors.FAIL}] Quit ".center(columns))
+    print(f"[{bcolors.ENDC}01{bcolors.FAIL}] Enable ".center(columns))
+    print(f"[{bcolors.ENDC}02{bcolors.FAIL}] Disable ".center(columns))
+    print(f"[{bcolors.ENDC}00{bcolors.FAIL}] Quit ".center(columns))
     print()
 
     value = input(bcolors.ENDC + "Select: ")
 
-    if value in ["Q", "q"]:
+    if value in ["0", "00"]:
         loader(menu)
 
-    elif value == "1":
+    elif value in ["1", "01"]:
         os.system("clear")
         os.system("cls")
 
@@ -120,7 +205,7 @@ def firewall():
         time.sleep(5)
         loader(menu)
 
-    elif value == "2":
+    elif value in ["2", "02"]:
         os.system("clear")
         os.system("cls")
 
@@ -154,13 +239,16 @@ def commands():
     print(bcolors.FAIL + pyfiglet.figlet_format("Commands", font='3d-ascii', width=110, justify="center"))
     print("------------------------------------------------------------------------------------".center(columns))
     print()
-    print(f"[{bcolors.ENDC}1{bcolors.FAIL}]. Taskkill".center(columns))
-    print(f"[{bcolors.ENDC}Q{bcolors.FAIL}]. Quit".center(columns))
+    print(f"[{bcolors.ENDC}01{bcolors.FAIL}]. Taskkill".center(columns))
+    print(f"[{bcolors.ENDC}00{bcolors.FAIL}]. Quit".center(columns))
     print()
 
     value = input("Select: ")
 
-    if value in ["Q", "q"]:
+    if value in ["0", "00"]:
+        loader(menu)
+
+    if value in ["1", "01"]:
         loader(menu)
 
 def vrchat():
@@ -204,7 +292,7 @@ def vrchat():
         print()
         loader(menu)
 
-def bruteforce():
+def password():
     os.system("clear")
     os.system("cls")
     print(bcolors.FAIL + pyfiglet.figlet_format("Passwords. Cracker", font='3d-ascii', width=110, justify="center"))
@@ -212,6 +300,7 @@ def bruteforce():
     print()
     print(f"[{bcolors.ENDC}01{bcolors.FAIL}]. WIFI bruteforce    ".center(columns))
     print(f"[{bcolors.ENDC}02{bcolors.FAIL}]. Hash Decrypter     ".center(columns))
+    print(f"[{bcolors.ENDC}03{bcolors.FAIL}]. Zip Decrypter     ".center(columns))
     print(f"[{bcolors.ENDC}00{bcolors.FAIL}]. Quit               ".center(columns))
     print()
 
@@ -241,7 +330,19 @@ def bruteforce():
             loader(menu)
 
         elif value in ["1", "01"]:
-            loader(menu)
+            os.system("clear")
+            os.system("cls")
+            print(bcolors.FAIL + pyfiglet.figlet_format("Password. Hash", font='3d-ascii', width=110, justify="center"))
+            print("------------------------------------------------------------------------------------".center(columns))
+            print()
+            value = input("Hash (MD5): ")
+
+            if value != "":
+                d = hashlib.md5.new(value)
+                d.update(value)
+                print(d.hexdigest())
+                input()
+                loader(menu)
 
         elif value in ["2", "02"]:
             loader(menu)
@@ -249,8 +350,94 @@ def bruteforce():
         elif value in ["3", "03"]:
             loader(menu)
 
+    elif value in ["3", "03"]:
+        os.system("clear")
+        os.system("cls")
+        print(bcolors.FAIL + pyfiglet.figlet_format("Zip. Cracker", font='3d-ascii', width=110, justify="center"))
+        print("------------------------------------------------------------------------------------".center(columns))
+        print()
+        print(f"[{bcolors.ENDC}01{bcolors.FAIL}]. Random numbers    ".center(columns))
+        print(f"[{bcolors.ENDC}02{bcolors.FAIL}]. Password list     ".center(columns))
+        print(f"[{bcolors.ENDC}00{bcolors.FAIL}]. Quit              ".center(columns))
+        print()
+
+        value = input("Select: ")
+
+        if value in ["1", "01"]:
+            os.system("clear")
+            os.system("cls")
+
+            print(bcolors.FAIL + pyfiglet.figlet_format("Zip. Cracker", font='3d-ascii', width=110, justify="center"))
+            print("------------------------------------------------------------------------------------".center(columns))
+            print()
+
+            value = input("Zip Path: ")
+
+            if os.path.isfile(value):
+                value2 = input("\nPath to extract: ")
+
+                if os.path.isdir(value2):
+                    val = input("\nCharacters amount: ")
+                    zip_value = zipfile.ZipFile(value, mode="r")
+                    crack(zip_value,value2,val)
+
+                else:
+                    print(f"{bcolors.FAIL}[{bcolors.ENDC}ERROR{bcolors.FAIL}] Invalid Folder Path".center(columns))
+                    input("\n:")
+                    loader(password)
+
+            else:
+                print(f"{bcolors.FAIL}[{bcolors.ENDC}ERROR{bcolors.FAIL}] Invalid Zip Path".center(columns))
+                input("\n:")
+                loader(password)
+
+        elif value in ["2", "02"]:
+
+            os.system("clear")
+            os.system("cls")
+
+            print(bcolors.FAIL + pyfiglet.figlet_format("Zip. Cracker", font='3d-ascii', width=110, justify="center"))
+            print("------------------------------------------------------------------------------------".center(columns))
+            print()
+            value = input("Password list path: ")
+
+            if os.path.isfile(value):
+                value2 = input("\nZip Path: ")
+
+                if os.path.isfile(value2):
+                    value3 = input("\nPath to extract: ")
+
+                    if os.path.isdir(value3):
+                        zip_file = zipfile.ZipFile(value2, mode="r")
+                        crackP(zip_file,value3,value)
+
+                    else:
+
+                        print(f"{bcolors.FAIL}[{bcolors.ENDC}ERROR{bcolors.FAIL}] Invalid Folder Path".center(columns))
+                        input("\n:")
+                        loader(password)
+                else:
+
+                    print(f"{bcolors.FAIL}[{bcolors.ENDC}ERROR{bcolors.FAIL}] Invalid Zip Path".center(columns))
+                    input("\n:")
+                    loader(password)
+            else:
+
+                print(f"{bcolors.FAIL}[{bcolors.ENDC}ERROR{bcolors.FAIL}] Invalid Password list Path".center(columns))
+                input("\n:")
+                loader(password)
+
+        elif value in ["0", "00"]:
+
+            loader(menu)
+
+        else:
+
+            loader(password)
+
     
 def menu():
+
     os.system("clear")
     os.system("cls")
     print(bcolors.FAIL + pyfiglet.figlet_format("Crow 61", font='3d-ascii', justify="center"))
@@ -278,7 +465,7 @@ def menu():
     elif value in  ["3", "03"]:
         os.system("clear")
         os.system("cls")
-        bruteforce()
+        password()
 
     elif value in  ["4", "04"]:
         os.system("clear")
