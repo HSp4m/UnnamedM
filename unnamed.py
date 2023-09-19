@@ -60,6 +60,7 @@ except:
         os.system("clear")
         os.system("cls")
         exit()
+        
     
 
 columns = shutil.get_terminal_size().columns
@@ -570,73 +571,14 @@ class Loader:
         value = input(f"{bcolors.ENDC}Fix? [{bcolors.OKGREEN}Y{bcolors.ENDC}/{bcolors.FAIL}N{bcolors.ENDC}]: ")
 
         if value in ["N", "n"]:
-            fnc()
-        elif value in ["S", "s", "Y", "y"]:
-            if os.path.isdir("UnnamedM\\"):
-                if os.path.isfile("UnnamedM\\unnamed.py"):
-                    os.system("cls")
-                    os.system("clear")
-                    print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] A possible updated file exist in 'UnnamedM\\unnamed.py'.".center(columns))
-                    print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Delete folder if you want to update again.".center(columns))
-                    input("\nPress any key to continue \n")
-                    exit()
-                
+
             os.system("clear")
             os.system("cls")
-            print(bcolors.FAIL + pyfiglet.figlet_format("UP. Options", font='3d-ascii', justify="center").center(columns))
-            
-            print(bcolors.FAIL +f" [{bcolors.ENDC}1{bcolors.FAIL}].  Download (Not working)                       ".center(columns) +bcolors.ENDC)
-            print(bcolors.FAIL +f" [{bcolors.ENDC}2{bcolors.FAIL}].  Git clone                                    ".center(columns) +bcolors.ENDC)
-            print(bcolors.FAIL +f" [{bcolors.ENDC}Q{bcolors.FAIL}].  Quit                                         ".center(columns) +bcolors.ENDC)
-            print()
-            value = input("Select: ")
-
-            if value == "1":
-                    
-                os.system("clear")
-                os.system("cls")
-                print(bcolors.FAIL + f"[{bcolors.ENDC}ERROR{bcolors.FAIL}] NOT WORKING".center(columns))
-                input("Press any key to continue \n")
-                Loader.loader(menu)
-
-            elif value == "2":
-                os.system("clear")
-                os.system("cls")
-                print(bcolors.FAIL + f"[{bcolors.ENDC}INFO{bcolors.FAIL}] Make sure you have git installed and a folder called 'UnnamedM' not exists.".center(columns) + bcolors.ENDC)
-                print()
-                input("Press any key to continue ")
-
-                os.system("git clone https://github.com//HSp4m/UnnamedM")
-
-                if os.path.isdir("UnnamedM\\"):
-                    os.system("clear")
-                    os.system("cls")
-                    print(bcolors.OKGREEN + pyfiglet.figlet_format("OK", font='3d-ascii', justify="center"))
-
-                    if os.path.isfile("UnnamedM\\unnamed.py"):
-                        print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Open 'UnnamedM\\unnamed.py' to start new version".center(columns) + bcolors.ENDC)
-                        print()
-                        exit()
-                    else:
-                        os.system("clear")
-                        os.system("cls")
-                        print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
-                        input("A error ocurred (File not found)." + bcolors.ENDC)
-                        exit()
-                else:
-                    os.system("clear")
-                    os.system("cls")
-                    print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
-                    input("A error ocurred (Try to open file in powershell)." + bcolors.ENDC)
-                    exit()
-                    
-            elif value in ['q', 'Q']:
-                os.system("clear")
-                os.system("cls")
-                exit()
-
-        else:
-            Loader.loader()
+            print(f"{bcolors.FAIL}[{bcolors.ENDC}!!{bcolors.FAIL}] Using invalid versions the script maybe not run.".center(columns))
+            input("\n: ")
+            fnc()
+        elif value in ["S", "s", "Y", "y"]:
+            Loader.DOWNLOAD()
 
     def UPDATE():
         os.system("clear")
@@ -663,71 +605,75 @@ class Loader:
             else:
                 exit()
         elif value in ["S", "s", "Y", "y"]:
-            if os.path.isdir("UnnamedM\\"):
-                if os.path.isfile("UnnamedM\\unnamed.py"):
-                    os.system("clear")
-                    os.system("cls")
-                    print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] A possible updated file exist in 'UnnamedM\\unnamed.py'".center(columns))
-                    print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Delete folder if you want to update again.".center(columns))
-                    input("\nPress any key to continue \n")
-                    exit()
+            Loader.DOWNLOAD()
+    
+    def DOWNLOAD():
+        if os.path.isdir("UnnamedM\\"):
+            if os.path.isfile("UnnamedM\\unnamed.py"):
+                os.system("clear")
+                os.system("cls")
+                print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] A possible updated file exist in 'UnnamedM\\unnamed.py'".center(columns))
+                print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Delete folder if you want to update again.".center(columns))
+                input("\nPress any key to continue \n")
+                exit()
                 
+        os.system("clear")
+        os.system("cls")
+        print(bcolors.FAIL + pyfiglet.figlet_format("UP. Options", font='3d-ascii', justify="center").center(columns))
+            
+        print(bcolors.FAIL +f" [{bcolors.ENDC}01{bcolors.FAIL}].  Download (Not working)                       ".center(columns) +bcolors.ENDC)
+        print(bcolors.FAIL +f" [{bcolors.ENDC}02{bcolors.FAIL}].  Git clone                                    ".center(columns) +bcolors.ENDC)
+        print(bcolors.FAIL +f" [{bcolors.ENDC}00{bcolors.FAIL}].  Quit                                         ".center(columns) +bcolors.ENDC)
+        print()
+        value = input("Select: ")
+
+        if value in ["1", "01"]:
+                    
             os.system("clear")
             os.system("cls")
-            print(bcolors.FAIL + pyfiglet.figlet_format("UP. Options", font='3d-ascii', justify="center").center(columns))
-            
-            print(bcolors.FAIL +f" [{bcolors.ENDC}1{bcolors.FAIL}].  Download (Not working)                       ".center(columns) +bcolors.ENDC)
-            print(bcolors.FAIL +f" [{bcolors.ENDC}2{bcolors.FAIL}].  Git clone                                    ".center(columns) +bcolors.ENDC)
-            print(bcolors.FAIL +f" [{bcolors.ENDC}Q{bcolors.FAIL}].  Quit                                         ".center(columns) +bcolors.ENDC)
+            print(bcolors.FAIL + f"[{bcolors.ENDC}*{bcolors.FAIL}] IN DEVELOPMENT".center(columns))
+            input("Press any key to continue \n")
+            Loader.DOWNLOAD()
+
+        elif value in ["2", "02"]:
+            os.system("clear")
+            os.system("cls")
+            print(bcolors.FAIL + f"[{bcolors.ENDC}INFO{bcolors.FAIL}] Make sure you have git installed and a folder called 'UnnamedM' not exists.".center(columns) + bcolors.ENDC)
             print()
-            value = input("Select: ")
-
-            if value == "1":
-                    
-                os.system("clear")
-                os.system("cls")
-                print(bcolors.FAIL + f"[{bcolors.ENDC}ERROR{bcolors.FAIL}] NOT WORKING".center(columns))
-                input("Press any key to continue \n")
-                Loader.loader(menu)
-
-            elif value == "2":
-                os.system("clear")
-                os.system("cls")
-                print(bcolors.FAIL + f"[{bcolors.ENDC}INFO{bcolors.FAIL}] Make sure you have git installed and a folder called 'UnnamedM' not exists.".center(columns) + bcolors.ENDC)
-                print()
-                input("Press any key to continue ")
+            input("Press any key to continue ")
                 
-                os.system("git clone https://github.com//HSp4m/UnnamedM")
+            os.system("git clone https://github.com//HSp4m/UnnamedM")
 
-                if os.path.isdir("UnnamedM\\"):
-                    os.system("clear")
-                    os.system("cls")
-                    print(bcolors.OKGREEN + pyfiglet.figlet_format("OK", font='3d-ascii', justify="center"))
+            if os.path.isdir("UnnamedM\\"):
+                os.system("clear")
+                os.system("cls")
+                print(bcolors.OKGREEN + pyfiglet.figlet_format("OK", font='3d-ascii', justify="center"))
 
-                    if os.path.isfile("UnnamedM\\unnamed.py"):
-                        print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Open 'UnnamedM\\unnamed.py' to start new version".center(columns) + bcolors.ENDC)
-                        print()
-                        exit()
-                    else:
-                        os.system("clear")
-                        os.system("cls")
-                        print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
-                        input("A error ocurred (File not found)." + bcolors.ENDC)
-                        exit()
+                if os.path.isfile("UnnamedM\\unnamed.py"):
+                    print(bcolors.ENDC + f"[{bcolors.OKBLUE}INFO{bcolors.ENDC}] Open 'UnnamedM\\unnamed.py' to start new version".center(columns) + bcolors.ENDC)
+                    print()
+                    exit()
                 else:
                     os.system("clear")
                     os.system("cls")
                     print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
-                    input("A error ocurred (Try to open file in powershell)." + bcolors.ENDC)
+                    input("A error ocurred (File not found)." + bcolors.ENDC)
                     exit()
-                    
-            elif value in ['q', 'Q']:
+            else:
                 os.system("clear")
                 os.system("cls")
+                print(bcolors.FAIL + pyfiglet.figlet_format("ERROR", font='3d-ascii', justify="center").center(columns))
+                input("A error ocurred (Try to open UNNAMED.py in powershell)." + bcolors.ENDC)
                 exit()
+                    
+        elif value in ['0', '00']:
+            os.system("clear")
+            os.system("cls")
+            exit()
                 
         else:
-            Loader.loader()
+            Loader.DOWNLOAD()
+
     
 if __name__ == "__main__":
     Loader.loader(menu)
