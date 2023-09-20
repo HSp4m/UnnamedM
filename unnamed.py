@@ -71,7 +71,7 @@ url = 'https://raw.githubusercontent.com/HSp4m/UnnamedM/main/version.txt'
 FileURL = 'https://raw.githubusercontent.com/HSp4m/UnnamedM/main/unnamed.py'
 
 page = urllib.request.urlopen(url)
-c_version = "0.1.0"
+c_version = "0.1.0.1"
 u_version = f"{page.read()}".replace("b","").replace("'","").replace("n","").replace("\\","")
 p_enabled = False;
 
@@ -440,7 +440,7 @@ class passwords:
             atem = 0
             crack = 0
             
-            with open(valueF, "r") as file:
+            with open(valueF, "r", encoding="latin-1") as file:
                 for line in file:
                     for password in line.split():
                         try:
@@ -496,7 +496,7 @@ class passwords:
             atem = 0
             crack = 0
 
-            with open(valueF, "r") as file:
+            with open(valueF, "r", encoding="latin-1") as file:
                 for line in file:
                     for password in line.split():
                         try:
@@ -551,7 +551,7 @@ class passwords:
             atem = 0
             crack = 0
 
-            with open(valueF, "r") as file:
+            with open(valueF, "r", encoding="latin-1") as file:
                 for line in file:
                     for password in line.split():
                         try:
