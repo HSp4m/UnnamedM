@@ -386,7 +386,7 @@ class passwords:
         print(bcolors.FAIL + pyfiglet.figlet_format("WIFI BruteForce", font='3d-ascii', width=110, justify="center"))
         print("------------------------------------------------------------------------------------".center(columns))
         print()
-        print(f"[{bcolors.ENDC}INFO{bcolors.FAIL}] SOON".center(columns))
+        print(f"[{bcolors.ENDC}*{bcolors.FAIL}] SOON".center(columns))
         input()
         Loader.loader(passwords.password)
         
